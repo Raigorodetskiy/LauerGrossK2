@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LauerGrossK2.Tests/LauerGrossK2.Tests.csproj" />
+  <Project Path="LauerGrossK2/LauerGrossK2.csproj" />
+</Solution>

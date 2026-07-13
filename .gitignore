@@ -1,0 +1,16 @@
+# .NET build artifacts
+bin/
+obj/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+.nuget/
+
+# User-specific files
+*.user
+*.suo
+.vs/
+
+# Test results
+TestResults/
