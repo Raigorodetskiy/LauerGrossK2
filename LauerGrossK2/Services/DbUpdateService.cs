@@ -187,7 +187,13 @@ namespace LauerGrossK2.Services
             }
             else
             {
-                // Standard-Zuzahlungsberechnung (Reihenfolge exakt wie Delphi)
+                // Standard-Zuzahlungsberechnung (Reihenfolge und Struktur exakt wie Delphi-Original).
+                // Die vier Bedingungen sind vollständig disjunkt und decken alle positiven Werte ab:
+                //   [0, 5)  →  Zuzahlung = VK
+                //   [5, 50] →  Zuzahlung = 5 €
+                //   (50,100)→  Zuzahlung = 10 % (gerundet)
+                //   [100,∞) →  Zuzahlung = 10 € (Maximum)
+                // Nur eine Bedingung kann pro Aufruf wahr sein; separate if-Statements sind bewusst.
                 if (currLauerVK < 5m)
                     r.Zuzahlung = currLauerVK;
                 if (currLauerVK >= 100m)
